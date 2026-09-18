@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Tracks{% endblock %}
+{% block content %}
+<h1>Tracks</h1>
+<a href="{% url 'createtrack' %}">Add New Track</a>
+<table>
+<tr><th>ID</th><th>Name</th><th>Action</th></tr>
+{% for track in tracks %}
+<tr>
+    <td>{{ track.id }}</td>
+    <td><a href="{% url 'gettrack' track.id %}">{{ track.name }}</a></td>
+    <td>
+        <a href="{% url 'updatetrack' track.id %}">Update</a>
+        <a href="{% url 'deletetrack' track.id %}">Delete</a>
+    </td>
+</tr>
+{% empty %}
+<tr><td colspan="3">No tracks in database.</td></tr>
+{% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Track{% endblock %}
+{% block content %}
+<h1>Track Details</h1>
+<p><strong>ID:</strong> {{ track.id }}</p>
+<p><strong>Name:</strong> {{ track.name }}</p>
+<a href="{% url 'alltracks' %}">Back to tracks</a>
+{% endblock %}

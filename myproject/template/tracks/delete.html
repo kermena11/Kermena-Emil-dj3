@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Delete Track{% endblock %}
+{% block content %}
+<h1>Delete Track</h1>
+<p>Are you sure you want to delete "{{ track.name }}"?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+</form>
+<a href="{% url 'alltracks' %}">Cancel</a>
+{% endblock %}

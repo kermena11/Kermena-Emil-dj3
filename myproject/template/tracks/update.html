@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Update Track{% endblock %}
+{% block content %}
+<h1>Update Track</h1>
+<form method="post">
+    {% csrf_token %}
+    <label>Track name:</label>
+    <input type="text" name="name" value="{{ track.name }}" required maxlength="100">
+    <button type="submit">Save Changes</button>
+</form>
+<a href="{% url 'alltracks' %}">Back to tracks</a>
+{% endblock %}
